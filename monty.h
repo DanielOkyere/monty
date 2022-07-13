@@ -26,7 +26,7 @@ typedef struct stack_s
 	int n;
 	struct stack_s *prev;
 	struct stack_s *next;
-} stack_t;
+} c_stack_t;
 
 /**
  * struct instruction_s - opcode and its function
@@ -40,11 +40,12 @@ typedef struct stack_s
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(c_stack_t **stack, unsigned int line_number);
 } instruction_t;
-void read_file(char *filename, stack_t **stack);
-void free_dlistint(stack_t *head);
-typedef void (*inst_func)(stack_t **stack, unsigned int line_number);
+void read_file(char *filename, c_stack_t **stack);
+void free_dlistint(c_stack_t *head);
+typedef void (*inst_func)(c_stack_t **stack, unsigned int line_number);
 inst_func get_op_func(char *str);
 char *parse_line(char *line);
+void error_exit(c_stack_t **stack);
 #endif

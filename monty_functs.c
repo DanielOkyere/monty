@@ -5,12 +5,12 @@
  * @stack: pointer to the top stack
  *
  */
-void read_file(char *filename, stack_t **stack)
+void read_file(char *filename, c_stack_t **stack)
 {
 	char *buf = NULL, *line;
 	size_t i = 0;
 	int check, read, lc = 1;
-	FILE *fp = fopen(filename, 'r');
+	FILE *fp = fopen(filename, "r");
 	inst_func s;
 
 	if (fp == NULL)
@@ -45,9 +45,9 @@ void read_file(char *filename, stack_t **stack)
  * @head: pointer to first node
  *
  */
-void free_dlistint(stack_t *head)
+void free_dlistint(c_stack_t *head)
 {
-	stack_t *tmp;
+	c_stack_t *tmp;
 
 	while (head != NULL)
 	{

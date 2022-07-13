@@ -10,7 +10,7 @@ int sq_flag = 0; /* global definintion */
  */
 int main(int ac, char **av)
 {
-	stack_t *stack;
+	c_stack_t *stack;
 
 	stack = NULL;
 	if (ac != 2)
