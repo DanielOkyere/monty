@@ -6,14 +6,14 @@
  * @stack: head of stack
  * @line_number: number of line opcode occurs on
  */
-void _push(c_stack_t **stack, unsigned int line_number)
+void _push(stack_t **stack, unsigned int line_number)
 {
-	c_stack_t *new;
+	stack_t *new;
 	char *arg;
 	int push_arg;
 
 	push_arg = 0;
-	new = malloc(sizeof(c_stack_t));
+	new = malloc(sizeof(stack_t));
 	if (!new)
 	{
 		printf("Error: malloc failed\n");
@@ -46,9 +46,9 @@ void _push(c_stack_t **stack, unsigned int line_number)
  * @stack: pointer to linked list stack
  * @line_number: number of line opcode occurs
  */
-void _pall(c_stack_t **stack, __attribute__ ((unused))unsigned int line_number)
+void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 {
-	c_stack_t *runner;
+	stack_t *runner;
 
 	runner = *stack;
 	while (runner != NULL)

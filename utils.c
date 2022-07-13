@@ -5,7 +5,7 @@
  *
  * @stack: pointer to the head of stack
  */
-void error_exit(c_stack_t **stack)
+void error_exit(stack_t **stack)
 {
 	if (*stack)
 		free_dlistint(*stack);

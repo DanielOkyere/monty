@@ -6,11 +6,11 @@
  * @n: data for node
  * Return: pointer to first node
  */
-c_stack_t *add_dnodeint(c_stack_t **head, const int n)
+stack_t *add_dnodeint(stack_t **head, const int n)
 {
-	c_stack_t *new;
+	stack_t *new;
 
-	new = malloc(sizeof(c_stack_t));
+	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 		return (NULL);
 
@@ -38,10 +38,10 @@ c_stack_t *add_dnodeint(c_stack_t **head, const int n)
  * @n: data in the node
  * Return: pointer to first node
  */
-c_stack_t *add_dnodeint_end(c_stack_t **head, const int n)
+stack_t *add_dnodeint_end(stack_t **head, const int n)
 {
-	c_stack_t *tmp = *head;
-	c_stack_t *new;
+	stack_t *tmp = *head;
+	stack_t *new;
 
 	new = malloc(sizeof(stack_t));
 	if (new == NULL)
