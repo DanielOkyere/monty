@@ -48,4 +48,9 @@ typedef void (*inst_func)(c_stack_t **stack, unsigned int line_number);
 inst_func get_op_func(char *str);
 char *parse_line(char *line);
 void error_exit(c_stack_t **stack);
+int isnum(char *str);
+void _push(c_stack_t **stack, unsigned int line_number);
+c_stack_t *add_dnodeint(c_stack_t **head, const int n);
+c_stack_t *add_dnodeint_end(c_stack_t **head, const int n);
+void _pall(c_stack_t **stack, __attribute__ ((unused))unsigned int line_number);
 #endif

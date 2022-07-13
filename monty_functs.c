@@ -70,6 +70,8 @@ inst_func get_op_func(char *str)
 	int i;
 
 	instruction_t inx[] = {
+		{"push", _push},
+		{"pall", _pall},
 		{NULL, NULL}
 	};
 	for (i = 0; inx[i].f != NULL && strcmp(inx[i].opcode, str) != 0; i++)
