@@ -57,3 +57,22 @@ void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 		runner = runner->next;
 	}
 }
+
+/**
+ * _pint - print int a top of stack
+ *
+ * @stack: pointer to linked list stack
+ * @line_num: number of line opcode occurs on
+ */
+void _pint(stack_t **stack, unsigned int line_num)
+{
+	stack_t *runner;
+
+	runner = *stack;
+	if (runner == NULL)
+	{
+		printf("L%d: can't pint, stack empty\n", line_num);
+		error_exit(stack);
+	}
+	printf("%d\n", runner->n);
+}

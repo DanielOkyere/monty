@@ -21,7 +21,7 @@ void read_file(char *filename, stack_t **stack)
 	while ((read = getline(&buf, &i, fp)) != -1)
 	{
 		line = parse_line(buf);
-		if (line == NULL || line[0 == '#'])
+		if (line == NULL || line[0] == '#')
 		{
 			lc++;
 			continue;
@@ -72,6 +72,7 @@ inst_func get_op_func(char *str)
 	instruction_t inx[] = {
 		{"push", _push},
 		{"pall", _pall},
+		{"pint", _pint},
 		{NULL, NULL}
 	};
 	for (i = 0; inx[i].f != NULL && strcmp(inx[i].opcode, str) != 0; i++)
