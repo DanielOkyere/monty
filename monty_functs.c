@@ -73,6 +73,12 @@ inst_func get_op_func(char *str)
 		{"push", _push},
 		{"pall", _pall},
 		{"pint", _pint},
+		{"pop", _pop},
+		{"swap", _swap},
+		{"nop", _nop},
+		{"add", _add},
+		{"stack", _stack},
+		{"queue", _queue},
 		{NULL, NULL}
 	};
 	for (i = 0; inx[i].f != NULL && strcmp(inx[i].opcode, str) != 0; i++)

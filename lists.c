@@ -66,3 +66,45 @@ stack_t *add_dnodeint_end(stack_t **head, const int n)
 	new->next = NULL;
 	return (new);
 }
+
+/**
+ * delete_dnodeint_at_index - deletes node at index
+ *
+ * @head: head node
+ * @indx: position to delete
+ * Return: 1 if success, -1 if failure
+ */
+int delete_dnodeint_at_index(stack_t **head, unsigned int indx)
+{
+	stack_t *tmp, *tmp2;
+	unsigned int i;
+
+	if (*head == NULL)
+		return (-1);
+
+	tmp = *head;
+
+	if (index == 0)
+	{
+		*head = tmp->next;
+		if (tmp->next != NULL)
+			tmp->next->prev = NULL;
+		free(tmp);
+		return (1);
+	}
+	i = 0;
+	while (i < (indx - 1))
+	{
+		if (tmp == NULL)
+			return (-1);
+		tmp = tmp->next;
+		i++;
+	}
+	tmp2 = (tmp->next)->next;
+	if (tmp->next->next != NULL)
+		tmp->next->next->prev = tmp;
+	free(tmp->next);
+	tmp->next = tmp2;
+
+	return (1);
+}
