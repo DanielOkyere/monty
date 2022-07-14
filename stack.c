@@ -53,7 +53,7 @@ void _pall(stack_t **stack, __attribute__ ((unused))unsigned int line_number)
 	runner = *stack;
 	while (runner != NULL)
 	{
-		fprintf(STDOUT_FILENO, "%d\n", runner->n);
+		dprintf(STDOUT_FILENO, "%d\n", runner->n);
 		runner = runner->next;
 	}
 }
@@ -74,7 +74,7 @@ void _pint(stack_t **stack, unsigned int line_num)
 		dprintf(STDERR_FILENO, "L%d: can't pint, stack empty\n", line_num);
 		error_exit(stack);
 	}
-	fprintf(STDOUT_FILENO, "%d\n", runner->n);
+	dprintf(STDOUT_FILENO, "%d\n", runner->n);
 }
 
 /**
