@@ -87,7 +87,7 @@ void _pop(stack_t **stack, unsigned int line_num)
 {
 	if (*stack == NULL)
 	{
-		printf("L%d: can't pop an empty stack\n", line_num)
+		printf("L%d: can't pop an empty stack\n", line_num);
 		error_exit(stack);
 	}
 	delete_dnodeint_at_index(stack, 0);

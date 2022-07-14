@@ -84,7 +84,7 @@ int delete_dnodeint_at_index(stack_t **head, unsigned int indx)
 
 	tmp = *head;
 
-	if (index == 0)
+	if (indx == 0)
 	{
 		*head = tmp->next;
 		if (tmp->next != NULL)
