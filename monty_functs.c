@@ -81,10 +81,11 @@ inst_func get_op_func(char *str)
 		{"queue", _queue},
 		{NULL, NULL}
 	};
-	for (i = 0; inx[i].f != NULL && strcmp(inx[i].opcode, str) != 0; i++)
-		;
-
-	return (inx[i].f);
+	for (i = 0; inx[i].f != NULL && strcmp(inx[i].opcode, str) == 0; i++)
+	{
+		return (inx[i].f);
+	}
+	return (NULL);
 }
 
 /**
