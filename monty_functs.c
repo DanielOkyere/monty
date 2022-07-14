@@ -15,7 +15,7 @@ void read_file(char *filename, stack_t **stack)
 
 	if (fp == NULL)
 	{
-		printf("Error: Can't open file %s\n", filename);
+		dprintf(STDERR_FILENO, "Error: Can't open file %s\n", filename);
 		error_exit(stack);
 	}
 	while ((read = getline(&buf, &i, fp)) != -1)
@@ -29,7 +29,7 @@ void read_file(char *filename, stack_t **stack)
 		s = get_op_func(line);
 		if (s == NULL)
 		{
-			printf("L%d: unknown instruction %s\n", lc, line);
+			dprintf(STDERR_FILENO, "L%d: unknown instruction %s\n", lc, line);
 		}
 		s(stack, lc);
 		lc++;
