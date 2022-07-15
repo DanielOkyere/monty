@@ -67,7 +67,7 @@ void free_dlistint(stack_t *head)
  */
 inst_func get_op_func(char *str)
 {
-	int i;
+	int i, codes = 9;
 
 	instruction_t inx[] = {
 		{"push", _push},
@@ -81,9 +81,10 @@ inst_func get_op_func(char *str)
 		{"queue", _queue},
 		{NULL, NULL}
 	};
-	for (i = 0; inx[i].f != NULL && strcmp(inx[i].opcode, str) == 0; i++)
+	for (i = 0; i < codes; i++)
 	{
-		return (inx[i].f);
+		if (strcmp(inx[i].opcode, str) == 0)
+			return (inx[i].f);
 	}
 	return (NULL);
 }
